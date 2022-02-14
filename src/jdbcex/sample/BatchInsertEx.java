@@ -1,4 +1,4 @@
-package jdbcex.day0210;
+package jdbcex.sample;
 
 import java.sql.*; 
 public class BatchInsertEx { 
@@ -22,7 +22,7 @@ public class BatchInsertEx {
 					"password varchar2(10))"; 
 			//stmt.executeUpdate(sql); 
 
-			con.setAutoCommit(false);//트랜잭션 시작: 이하 하나으 트랜잭션으로 묶음
+			con.setAutoCommit(false);//트랜잭션 시작: 이하 하나의 트랜잭션으로 묶음
 			stmt.addBatch("INSERT INTO test4 " + 
 					"VALUES('abc1011', '1111')"); 
 			stmt.addBatch("INSERT INTO test4 " + 

@@ -26,7 +26,7 @@ public class JdbcEx5 {
 		String password = "tiger";
 
 		Connection con = null;
-		Statement stmt = null;
+		Statement stmt = null; 
 		ResultSet rs = null;
 		
 		try {
@@ -44,7 +44,7 @@ public class JdbcEx5 {
 				System.out.printf("부서 : %d 최대 : %d  최소 : %d 평균 : %d"
 						,deptno,max,min,avg);
 			}else {
-				System.out.println(input+" 부서 없음");
+				System.out.println(input+" 부서 없음"); 
 			}
 		
 		} catch (SQLException e) {

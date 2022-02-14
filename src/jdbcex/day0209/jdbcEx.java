@@ -28,7 +28,7 @@ public class jdbcEx {
 			System.out.printf("%d번 부서 %s의 근무지는 %s입니다.\n"
 					,deptno,dname,loc);
 			}
-			
+			System.out.println("AutoCOmmit:"+con.getAutoCommit() );
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

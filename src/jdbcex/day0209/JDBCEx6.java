@@ -3,8 +3,8 @@ package jdbcex.day0209;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-
 public class JDBCEx6 {
 
 	public static void main(String[] args) {
@@ -14,11 +14,12 @@ public class JDBCEx6 {
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		
 		try {
 			con = DriverManager.getConnection(url, user, password);
 			String sql = "insert into dept values(?,?,?)";
-			pstmt = con.prepareStatement(sql);
+			pstmt = con.prepareStatement(sql);//객체만들기 
 			pstmt.setInt(1, 60);
 			pstmt.setString(2, "디자인팀");
 			pstmt.setString(3, "부산");

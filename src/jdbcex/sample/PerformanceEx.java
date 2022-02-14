@@ -1,4 +1,4 @@
-package jdbcex.day0209;
+package jdbcex.sample;
 
 import java.sql.*;
 
@@ -24,7 +24,7 @@ public class PerformanceEx {
 			stmt = con.createStatement();
 			String sql = "create table performance(id varchar(10)," + "password varchar(10))";
 			stmt.executeUpdate(sql);
-//currentTimeMillis() :: �ý��ۻ��� ����ð��� �и�������� ��ȯ 
+//currentTimeMillis(): 시스템상의 현재시간을 밀리세컨드로 반환 
 			start = System.currentTimeMillis();
 			for (int i = 0; i < 10000; i++) {
 				stmt.executeUpdate("insert into performance values" + "('" + i + "','" + i + "')");
@@ -50,7 +50,7 @@ public class PerformanceEx {
 			ee.printStackTrace();
 		} finally {
 			try {
-				if (pstmt != null)
+				if (pstmt != null) //nullpointerexception
 					pstmt.close();
 				if (stmt != null)
 					stmt.close();
